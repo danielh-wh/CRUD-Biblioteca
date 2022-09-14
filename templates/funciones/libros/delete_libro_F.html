@@ -1,0 +1,11 @@
+{% extends 'templates/base/index.html' %}
+{% block contenido %}
+    <form method="POST" class="col-md-6 container" style="padding-top: 3%; padding-bottom: 3%">
+        {% csrf_token %}
+        <h3>¿Desea eliminar el libro '{{ libros.titulo }}'?</h3>
+        <br>
+        <button type="submit" class="btn btn-danger form-control">SI, ELIMINAR</button>
+        <br><br>
+        <a class="btn btn-primary form-control" href="{%  url 'listar_libros_F' %}">NO, REGRESAR</a>
+    </form>
+{% endblock %}

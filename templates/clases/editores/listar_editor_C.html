@@ -1,0 +1,53 @@
+{% extends 'templates/base/index.html' %}
+{% block contenido %}
+    <div class="container col-md-10" style="padding-top: 3%">
+    <h2>Clases</h2>
+    <form action="#">
+    <div class="form-group">
+        <div class="row col-md-6">
+            <div class="col-md-8">
+                <input type="text"  name="q" class="form-control" placeholder="Busqueda"><br>
+            </div>
+            <div class="col-md-4">
+                <button type="submit" class="btn-primary form-control">BUSCAR</button>
+            </div>
+        </div>
+    </div><hr><br>
+    </form>
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>No.</td>
+                    <td>Nombre</td>
+                    <td>Domicilio</td>
+                    <td>Ciudad</td>
+                    <td>Estado</td>
+                    <td>Pais</td>
+                    <td>Website</td>
+                    <td>Acciones</td>
+                </tr>
+            </thead>
+            <tbody>
+                {% if object_list %}
+                {% for editor in object_list %}
+                    <tr>
+                        <td>{{ editor.id }}</td>
+                        <td>{{ editor.nombre }}</td>
+                        <td>{{ editor.domicilio }}</td>
+                        <td>{{ editor.ciudad }}</td>
+                        <td>{{ editor.estado }}</td>
+                        <td>{{ editor.pais }}</td>
+                        <td>{{ editor.website }}</td>
+                        <td>
+                            <a class="btn btn-primary" href="{% url 'editar_editor_C' editor.id%}">Editar</a>
+                            <a class="btn btn-danger" href="{% url 'eliminar_editor_C' editor.id %}">Eliminar</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                {% else %}
+                    <h3>No hay registros</h3>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
