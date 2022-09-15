@@ -13,11 +13,10 @@ deactivate
 workon biblioteca
 ## Paso 5: instalamos dependencias con el entorno iniciado
 pip install -r requeriments.txt
-## Paso 6: Crear usuario
-## Paso 7: crear usuario
-Python2 manage.py createsuperuser
+## Paso 6: crear usuario
+Python2 manage.py createsuperuser,
 Ingresar usuario y contraseña
-## Paso 8: Iniciar el proyecto:
+## Paso 7: Iniciar el proyecto:
 python2 manage.py runserver
-## Paso 9: Para desactivar el proyecto:
+## Paso 8: Para desactivar el proyecto:
 Ctrl+c
